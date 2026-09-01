@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Meta / Facebook Ads case study by Jeffrey Tugay Tonio featuring campaign setup, audience testing, creative strategy, Messenger ads, and historical campaign results for Rune's Foodable.">
+  <title>Facebook Ads Case Study | Jeffrey Tonio</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <style>
+    :root {
+      --primary: #1769aa;
+      --primary-dark: #0d4f82;
+      --primary-light: #eaf4fb;
+      --text: #263238;
+      --muted: #667085;
+      --white: #ffffff;
+      --background: #f5f8fb;
+      --border: #d9e6f0;
+      --shadow: 0 12px 35px rgba(23, 105, 170, 0.09);
+      --radius: 18px;
+      --purple: #67358f;
+      --orange: #ef7d2d;
+      --green: #2c6e56;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--background);
+      color: var(--text);
+      line-height: 1.7;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; width: 100%; }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255,255,255,.96);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(10px);
+    }
+    .navbar {
+      max-width: 1150px;
+      margin: auto;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .logo { font-size: 20px; font-weight: 800; color: var(--primary); letter-spacing: .5px; }
+    .logo span { color: var(--text); }
+    .nav-links { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+    .nav-link {
+      padding: 9px 14px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 700;
+      color: #4b5563;
+    }
+    .nav-link:hover { background: var(--primary-light); color: var(--primary); }
+    .nav-link.primary { background: var(--primary); color: white; }
+    .nav-link.primary:hover { background: var(--primary-dark); }
+
+    .hero {
+      background:
+        radial-gradient(circle at 85% 20%, rgba(103,53,143,.12), transparent 28%),
+        radial-gradient(circle at 78% 70%, rgba(239,125,45,.12), transparent 30%),
+        linear-gradient(135deg, #f7fbfe 0%, #eef7fc 100%);
+      border-bottom: 1px solid var(--border);
+    }
+    .hero-inner {
+      max-width: 1150px;
+      margin: auto;
+      padding: 86px 24px 72px;
+      display: grid;
+      grid-template-columns: 1.25fr .75fr;
+      gap: 45px;
+      align-items: center;
+    }
+    .eyebrow {
+      display: inline-block;
+      color: var(--primary);
+      background: var(--primary-light);
+      border: 1px solid #cfe5f3;
+      border-radius: 30px;
+      padding: 7px 13px;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+    .hero h1 {
+      font-size: clamp(38px, 5vw, 62px);
+      line-height: 1.08;
+      letter-spacing: -1.8px;
+      margin-bottom: 18px;
+    }
+    .hero h1 span { color: var(--primary); }
+    .hero .lead { color: var(--muted); font-size: 17px; max-width: 720px; margin-bottom: 24px; }
+    .tag-row { display: flex; flex-wrap: wrap; gap: 9px; margin-bottom: 28px; }
+    .tag {
+      padding: 7px 11px;
+      border: 1px solid var(--border);
+      background: white;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+      color: #40505d;
+    }
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 18px;
+      border-radius: 9px;
+      font-size: 13px;
+      font-weight: 800;
+      transition: .2s ease;
+    }
+    .btn-primary { background: var(--primary); color: white; }
+    .btn-primary:hover { background: var(--primary-dark); transform: translateY(-1px); }
+    .btn-outline { border: 1px solid var(--primary); color: var(--primary); background: white; }
+    .btn-outline:hover { background: var(--primary-light); }
+
+    .hero-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 28px;
+      box-shadow: var(--shadow);
+    }
+    .hero-card .mini-label { font-size: 11px; color: var(--muted); font-weight: 800; text-transform: uppercase; letter-spacing: 1.2px; }
+    .hero-card h3 { font-size: 25px; margin: 5px 0 10px; }
+    .hero-card p { color: var(--muted); font-size: 14px; }
+    .status {
+      margin-top: 18px;
+      padding: 12px 14px;
+      border-radius: 12px;
+      background: #f8fbfd;
+      border: 1px solid var(--border);
+      font-size: 13px;
+      color: #4a5a67;
+    }
+    .status strong { color: var(--green); }
+
+    main { max-width: 1150px; margin: auto; padding: 0 24px 70px; }
+    section.case-section { padding: 70px 0 0; }
+    .section-heading { text-align: center; max-width: 760px; margin: 0 auto 34px; }
+    .section-heading span {
+      display: inline-block;
+      color: var(--primary);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .section-heading h2 { font-size: clamp(28px, 4vw, 38px); line-height: 1.2; margin-bottom: 10px; }
+    .section-heading p { color: var(--muted); }
+
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+    .metric {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 22px;
+      text-align: center;
+      box-shadow: 0 8px 25px rgba(23,105,170,.05);
+    }
+    .metric strong { display: block; font-size: 28px; color: var(--primary); line-height: 1.2; }
+    .metric span { display: block; color: var(--muted); font-size: 12px; margin-top: 6px; }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+    .card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+      box-shadow: var(--shadow);
+    }
+    .card h3 { font-size: 21px; margin-bottom: 10px; }
+    .card p { color: var(--muted); margin-bottom: 14px; }
+    .check-list { list-style: none; }
+    .check-list li { position: relative; padding: 8px 0 8px 24px; color: #4c5a66; border-bottom: 1px solid #edf2f6; }
+    .check-list li:last-child { border-bottom: none; }
+    .check-list li::before { content: "✓"; position: absolute; left: 0; color: var(--primary); font-weight: 900; }
+
+    .notice {
+      margin-top: 24px;
+      background: #fffdf8;
+      border: 1px solid #f4dfba;
+      border-radius: 14px;
+      padding: 18px 20px;
+      color: #665333;
+      font-size: 14px;
+    }
+    .notice strong { color: #8a5b18; }
+
+    .image-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+    .image-card img { background: #eef3f7; }
+    .image-caption { padding: 18px 20px; }
+    .image-caption strong { display: block; font-size: 15px; margin-bottom: 5px; }
+    .image-caption span { color: var(--muted); font-size: 13px; }
+
+    .screens-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+    .screens-grid .wide { grid-column: 1 / -1; }
+
+    .creative-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 26px;
+      align-items: start;
+    }
+    .creative-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+    .creative-card img { aspect-ratio: 1/1; object-fit: cover; }
+    .creative-body { padding: 22px; }
+    .creative-number { color: var(--primary); font-size: 11px; font-weight: 800; letter-spacing: 1.4px; text-transform: uppercase; }
+    .creative-body h3 { margin: 5px 0 8px; }
+    .creative-body p { color: var(--muted); font-size: 14px; }
+
+    .results-wrap {
+      display: grid;
+      grid-template-columns: .85fr 1.15fr;
+      gap: 28px;
+      align-items: center;
+    }
+    .result-metrics { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 20px 0; }
+    .result-pill {
+      background: #f8fbfd;
+      border: 1px solid var(--border);
+      border-radius: 13px;
+      padding: 15px;
+    }
+    .result-pill strong { display: block; color: var(--primary); font-size: 23px; line-height: 1.2; }
+    .result-pill span { font-size: 11px; color: var(--muted); }
+    .historical-label {
+      display: inline-block;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: #eef8f3;
+      color: var(--green);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .9px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .cta {
+      margin-top: 70px;
+      border-radius: 24px;
+      padding: 42px 28px;
+      text-align: center;
+      color: white;
+      background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+      box-shadow: var(--shadow);
+    }
+    .cta h2 { font-size: 31px; margin-bottom: 8px; }
+    .cta p { color: #e4f1f8; max-width: 680px; margin: 0 auto 22px; }
+    .cta-actions { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+    .cta .btn-primary { background: white; color: var(--primary); }
+    .cta .btn-primary:hover { background: #eef7fc; }
+    .cta .btn-outline { border-color: rgba(255,255,255,.65); color: white; background: transparent; }
+    .cta .btn-outline:hover { background: rgba(255,255,255,.1); }
+
+    footer {
+      margin-top: 70px;
+      padding: 30px 24px;
+      text-align: center;
+      background: #17232d;
+      color: #b8c5ce;
+      font-size: 13px;
+    }
+
+    @media (max-width: 900px) {
+      .hero-inner, .results-wrap { grid-template-columns: 1fr; }
+      .metrics { grid-template-columns: repeat(2, 1fr); }
+      .hero-card { max-width: 600px; }
+    }
+    @media (max-width: 720px) {
+      .navbar { align-items: flex-start; flex-direction: column; }
+      .two-col, .screens-grid, .creative-grid { grid-template-columns: 1fr; }
+      .screens-grid .wide { grid-column: auto; }
+      .result-metrics { grid-template-columns: 1fr 1fr; }
+      .hero-inner { padding-top: 58px; }
+    }
+    @media (max-width: 520px) {
+      .metrics, .result-metrics { grid-template-columns: 1fr; }
+      .hero-actions, .cta-actions { flex-direction: column; }
+      .btn { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="navbar">
+      <a href="index.html#home" class="logo">JEFFREY <span>TONIO</span></a>
+      <div class="nav-links">
+        <a href="index.html#projects" class="nav-link">← Back to Portfolio</a>
+        <a href="#results" class="nav-link">Results</a>
+        <a href="mailto:toniojeffrey28@gmail.com" class="nav-link primary">Contact Me</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <div>
+        <span class="eyebrow">Meta / Facebook Ads Case Study</span>
+        <h1>Rune's Foodable <span>Facebook Ads</span> Campaign</h1>
+        <p class="lead">
+          A portfolio case study demonstrating my current Meta Ads workflow for a local food business — from Messenger campaign setup and audience testing to creative strategy and performance review.
+        </p>
+        <div class="tag-row">
+          <span class="tag">Messenger Ads</span>
+          <span class="tag">Local Targeting</span>
+          <span class="tag">Broad vs. Interest</span>
+          <span class="tag">Creative Testing</span>
+          <span class="tag">Meta Ads Manager</span>
+        </div>
+        <div class="hero-actions">
+          <a href="#strategy" class="btn btn-primary">View Campaign Strategy ↓</a>
+          <a href="https://drive.google.com/file/d/1AEUJ72a3jiL3ake8fdyVLuRa_Dkz4zRP/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn btn-outline">View 6-Page PDF ↗</a>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <span class="mini-label">Project Snapshot</span>
+        <h3>Local Messenger Campaign</h3>
+        <p>Designed to demonstrate an organized, practical campaign setup for generating local inquiries and orders through Messenger.</p>
+        <div class="status"><strong>Portfolio demonstration:</strong> The current setup shown below is a draft/mock campaign and was not published. Historical results are clearly separated.</div>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <section class="case-section">
+      <div class="metrics">
+        <div class="metric"><strong>2</strong><span>Ad Sets</span></div>
+        <div class="metric"><strong>4</strong><span>Total Ads</span></div>
+        <div class="metric"><strong>2</strong><span>Creative Angles</span></div>
+        <div class="metric"><strong>₱320/day</strong><span>Planned Test Budget</span></div>
+      </div>
+    </section>
+
+    <section class="case-section" id="strategy">
+      <div class="section-heading">
+        <span>Campaign Strategy</span>
+        <h2>Simple, controlled testing for a local business</h2>
+        <p>The mock campaign was structured to compare audience approach and creative angle while keeping the campaign goal focused on Messenger conversations.</p>
+      </div>
+
+      <div class="two-col">
+        <div class="card">
+          <h3>Campaign Goal</h3>
+          <p>Generate qualified local inquiries and potential orders through Messenger.</p>
+          <ul class="check-list">
+            <li>Objective: Engagement / Messaging</li>
+            <li>Destination: Facebook Messenger</li>
+            <li>Performance goal: Maximize conversations</li>
+            <li>Bid strategy: Highest volume</li>
+            <li>Advantage+ placements</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Testing Structure</h3>
+          <p>Both ad sets use the same creatives and budget so the audience approach can be compared more fairly.</p>
+          <ul class="check-list">
+            <li>Ad Set 1: Broad local audience</li>
+            <li>Ad Set 2: Food-interest audience</li>
+            <li>Creative 1: Product / craving angle</li>
+            <li>Creative 2: Celebration / bilao angle</li>
+            <li>₱160 daily budget per ad set</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="notice">
+        <strong>Transparency note:</strong> This campaign setup is a current Meta Ads workflow demonstration created for my portfolio. It was saved as a draft and not published, so no mock results are presented as real performance.
+      </div>
+    </section>
+
+    <section class="case-section">
+      <div class="section-heading">
+        <span>Ads Manager Setup</span>
+        <h2>Campaign and audience configuration</h2>
+        <p>Actual Meta Ads Manager screenshots from the draft setup.</p>
+      </div>
+
+      <div class="screens-grid">
+        <div class="image-card wide">
+          <img src="meta-ads-assets/meta-campaign-structure.png" alt="Meta Ads campaign structure showing two ad sets and four ads">
+          <div class="image-caption">
+            <strong>01 — Campaign Structure</strong>
+            <span>Two audience approaches with two ads each for a total of four ads.</span>
+          </div>
+        </div>
+        <div class="image-card">
+          <img src="meta-ads-assets/meta-broad-audience.png" alt="Broad local audience settings in Meta Ads Manager">
+          <div class="image-caption">
+            <strong>02 — Broad Local Audience</strong>
+            <span>Age 25–55, all genders, with no interest signals added.</span>
+          </div>
+        </div>
+        <div class="image-card">
+          <img src="meta-ads-assets/meta-interest-audience.png" alt="Interest audience settings in Meta Ads Manager">
+          <div class="image-caption">
+            <strong>03 — Food Interest Audience</strong>
+            <span>Audience signals include Philippine cuisine and Desserts.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-section">
+      <div class="section-heading">
+        <span>Creative Strategy</span>
+        <h2>Two ad angles for different buying moments</h2>
+        <p>The creatives were designed to test an everyday product/craving angle against an occasion-based bilao angle.</p>
+      </div>
+
+      <div class="creative-grid">
+        <article class="creative-card">
+          <img src="meta-ads-assets/meta-ad-creative-1.png" alt="Freshly Made Kakanin Facebook ad creative">
+          <div class="creative-body">
+            <span class="creative-number">Ad Creative 01</span>
+            <h3>Freshly Made Kakanin</h3>
+            <p>Product-focused angle for merienda, sharing, and everyday cravings. CTA: Message to Order.</p>
+          </div>
+        </article>
+
+        <article class="creative-card">
+          <img src="meta-ads-assets/meta-ad-creative-2.png" alt="May Celebration kakanin bilao Facebook ad creative">
+          <div class="creative-body">
+            <span class="creative-number">Ad Creative 02</span>
+            <h3>May Celebration?</h3>
+            <p>Occasion-focused angle for birthdays, meetings, and family gatherings. CTA: Reserve Your Order.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="case-section" id="results">
+      <div class="section-heading">
+        <span>Historical Real Campaign</span>
+        <h2>Previous actual Facebook Ads results</h2>
+        <p>These results are from a previous Rune's Foodable campaign and are separate from the mock campaign setup shown above.</p>
+      </div>
+
+      <div class="results-wrap">
+        <div class="card">
+          <span class="historical-label">Actual Historical Results</span>
+          <h3>Performance Snapshot</h3>
+          <p>This historical campaign provides evidence of prior hands-on Facebook Ads experience and performance monitoring.</p>
+          <div class="result-metrics">
+            <div class="result-pill"><strong>218</strong><span>Purchases</span></div>
+            <div class="result-pill"><strong>₱120,667</strong><span>Purchase Value</span></div>
+            <div class="result-pill"><strong>₱156.14</strong><span>Cost per Purchase</span></div>
+            <div class="result-pill"><strong>3.55x</strong><span>ROAS</span></div>
+          </div>
+          <p><strong>Important:</strong> These numbers are historical actual results and are not presented as results of the current mock portfolio campaign.</p>
+        </div>
+
+        <div class="image-card">
+          <img src="meta-ads-assets/meta-historical-results.png" alt="Historical Facebook Ads results screenshot for Rune's Foodable">
+          <div class="image-caption">
+            <strong>Historical Results Screenshot</strong>
+            <span>Original Ads Manager performance evidence from a previous campaign.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-section">
+      <div class="section-heading">
+        <span>Skills Demonstrated</span>
+        <h2>What this case study shows</h2>
+      </div>
+      <div class="two-col">
+        <div class="card">
+          <h3>Meta Ads Setup</h3>
+          <ul class="check-list">
+            <li>Campaign, ad set, and ad naming structure</li>
+            <li>Messaging campaign configuration</li>
+            <li>Budget and schedule planning</li>
+            <li>Location, age, and audience setup</li>
+            <li>Placements and delivery settings</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Creative & Optimization Thinking</h3>
+          <ul class="check-list">
+            <li>Broad vs. interest audience testing</li>
+            <li>Creative angle testing</li>
+            <li>Messenger-focused ad copy and CTA</li>
+            <li>KPI awareness: conversations, CPA, ROAS</li>
+            <li>Clear separation of mock work and real results</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <div class="cta">
+      <h2>Need Facebook Ads support?</h2>
+      <p>I can support campaign setup, audience targeting, creative coordination, Messenger ad flows, and campaign monitoring for your business.</p>
+      <div class="cta-actions">
+        <a href="mailto:toniojeffrey28@gmail.com" class="btn btn-primary">Contact Me</a>
+        <a href="index.html#projects" class="btn btn-outline">Back to Portfolio</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>© 2026 Jeffrey Tugay Tonio. All Rights Reserved.</footer>
+</body>
+</html>
