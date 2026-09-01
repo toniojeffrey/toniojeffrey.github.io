@@ -471,6 +471,39 @@ nav a.active:not(.nav-button)::after {
       font-size: 12px;
     }
 
+    /* Additional styling for Meta Ads featured project */
+    .meta-project-card {
+      margin-top: 30px;
+    }
+
+    .meta-project-preview {
+      background:
+        radial-gradient(circle at top right, rgba(255,255,255,0.18), transparent 32%),
+        linear-gradient(135deg, #0d4f82, #1769aa 58%, #6b4fd3);
+    }
+
+    .meta-preview-icon {
+      font-size: 42px;
+      margin-bottom: 10px;
+    }
+
+    .meta-project-preview h2 {
+      font-size: 38px;
+      letter-spacing: 1.5px;
+    }
+
+    .project-note {
+      margin-top: 13px !important;
+      margin-bottom: 0 !important;
+      color: #7a8792 !important;
+      font-size: 12px;
+      line-height: 1.6;
+    }
+
+    .meta-project-stats .stat strong {
+      font-size: 18px;
+    }
+
     /* =========================================
        SKILLS
        ========================================= */
@@ -706,6 +739,10 @@ nav a.active:not(.nav-button)::after {
 
       .project-stats {
         grid-template-columns: repeat(2, 1fr);
+      }
+
+      .meta-project-stats .stat:last-child {
+        grid-column: 1 / -1;
       }
 
       .stat {
@@ -1361,12 +1398,12 @@ nav a.active:not(.nav-button)::after {
 
     <div class="section-heading">
 
-      <span>Featured Project</span>
+      <span>Featured Projects</span>
 
-      <h2>Shopify E-commerce Portfolio</h2>
+      <h2>Selected Work &amp; Case Studies</h2>
 
       <p>
-        A hands-on Shopify store development and optimization project.
+        Hands-on projects in Shopify e-commerce management and Meta/Facebook advertising.
       </p>
 
     </div>
@@ -1449,6 +1486,89 @@ nav a.active:not(.nav-button)::after {
       </div>
 
     </div>  
+
+    <!-- META / FACEBOOK ADS CASE STUDY -->
+    <div class="project-card meta-project-card">
+
+      <div class="project-top">
+
+        <div>
+
+          <span class="project-label">
+            Meta / Facebook Ads
+          </span>
+
+          <h3>📈 Rune's Foodable</h3>
+
+          <h4>
+            Campaign Strategy, Audience Testing &amp; Creative Setup
+          </h4>
+
+          <p>
+            A Facebook Ads case study featuring a current Meta Ads campaign
+            setup demonstration, local audience targeting, Broad vs. Interest
+            testing, Messenger ads, creative testing, and historical real
+            campaign results.
+          </p>
+
+          <a
+            href="https://drive.google.com/file/d/1AEUJ72a3jiL3ake8fdyVLuRa_Dkz4zRP/view?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-primary"
+          >
+            View Facebook Ads Case Study
+          </a>
+
+          <p class="project-note">
+            Opens the full 6-page case study in Google Drive. Mock campaign
+            setup and historical actual results are clearly identified.
+          </p>
+
+        </div>
+
+        <div class="project-preview meta-project-preview">
+
+          <div>
+            <div class="meta-preview-icon">📣</div>
+            <h2>META ADS</h2>
+            <p>Facebook Ads VA Case Study</p>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="project-stats meta-project-stats">
+
+        <div class="stat">
+          <strong>2</strong>
+          <span>Ad Sets</span>
+        </div>
+
+        <div class="stat">
+          <strong>4</strong>
+          <span>Ads</span>
+        </div>
+
+        <div class="stat">
+          <strong>2</strong>
+          <span>Audience Tests</span>
+        </div>
+
+        <div class="stat">
+          <strong>6</strong>
+          <span>Case Study Pages</span>
+        </div>
+
+        <div class="stat">
+          <strong>Real + Mock</strong>
+          <span>Evidence</span>
+        </div>
+
+      </div>
+
+    </div>
 
 <div class="project-details" id="voltcase-case-study">
 
