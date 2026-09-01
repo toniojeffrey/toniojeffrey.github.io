@@ -3,2146 +3,544 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Jeffrey Tugay Tonio | Shopify VA & General Virtual Assistant</title>
-
-  <meta name="description"
-    content="Professional portfolio of Jeffrey Tugay Tonio, a General Virtual Assistant, Shopify Product Listing Specialist, and Facebook Ads VA.">
-
+  <meta name="description" content="Meta / Facebook Ads case study by Jeffrey Tugay Tonio featuring campaign setup, audience testing, creative strategy, Messenger ads, and historical campaign results for Rune's Foodable.">
+  <title>Facebook Ads Case Study | Jeffrey Tonio</title>
   <link rel="icon" type="image/png" href="favicon.png">
-  
   <style>
-    /* =========================================
-       VOLTCASE / JEFFREY TONIO PORTFOLIO
-       ========================================= */
-
-:root {
-  --primary: #1769aa;
-  --primary-dark: #0d4f82;
-  --primary-light: #eaf4fb;
-  --text: #263238;
-  --muted: #667085;
-  --white: #ffffff;
-  --background: #f5f8fb;
-  --border: #d9e6f0;
-  --shadow: 0 10px 30px rgba(23, 105, 170, 0.08);
-  --radius: 18px;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      scroll-behavior: smooth;
+    :root {
+      --primary: #1769aa;
+      --primary-dark: #0d4f82;
+      --primary-light: #eaf4fb;
+      --text: #263238;
+      --muted: #667085;
+      --white: #ffffff;
+      --background: #f5f8fb;
+      --border: #d9e6f0;
+      --shadow: 0 12px 35px rgba(23, 105, 170, 0.09);
+      --radius: 18px;
+      --purple: #67358f;
+      --orange: #ef7d2d;
+      --green: #2c6e56;
     }
 
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
     body {
       font-family: Arial, Helvetica, sans-serif;
       background: var(--background);
       color: var(--text);
       line-height: 1.7;
     }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    /* =========================================
-       HEADER
-       ========================================= */
+    a { color: inherit; text-decoration: none; }
+    img { display: block; width: 100%; }
 
     header {
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: rgba(255, 255, 255, 0.96);
+      background: rgba(255,255,255,.96);
       border-bottom: 1px solid var(--border);
       backdrop-filter: blur(10px);
     }
-
     .navbar {
       max-width: 1150px;
       margin: auto;
       padding: 16px 24px;
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
       gap: 20px;
     }
-
-    .logo {
-      font-size: 20px;
-      font-weight: 800;
-      color: var(--primary);
-      letter-spacing: 0.5px;
-    }
-
-    .logo span {
-      color: var(--text);
-    }
-
-    nav {
-      display: flex;
-      gap: 24px;
-      align-items: center;
-    }
-
-    nav a {
-      color: #4b5563;
-      font-size: 14px;
-      font-weight: 600;
-      transition: 0.25s ease;
-    }
-
-    nav a:hover {
-      color: var(--primary);
-    }
-
-    nav a.active {
-  color: var(--primary) !important;
-  font-weight: 700 !important;
-}
-
-nav a.active:not(.nav-button)::after {
-  width: 100% !important;
-}
-
-    .nav-button {
-      background: var(--primary);
-      color: white !important;
-      padding: 9px 16px;
+    .logo { font-size: 20px; font-weight: 800; color: var(--primary); letter-spacing: .5px; }
+    .logo span { color: var(--text); }
+    .nav-links { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+    .nav-link {
+      padding: 9px 14px;
       border-radius: 8px;
-    }
-
-    .nav-button:hover {
-      background: var(--primary-dark);
-    }
-
-    /* =========================================
-       HERO
-       ========================================= */
-
-    .hero {
-      max-width: 1150px;
-      margin: 0 auto;
-      padding: 90px 24px 75px;
-      display: grid;
-      grid-template-columns: 1.5fr 0.8fr;
-      align-items: center;
-      gap: 60px;
-    }
-
-    .hero-badge {
-      display: inline-block;
-      background: var(--primary-light);
-      color: var(--primary);
-      padding: 7px 14px;
-      border-radius: 30px;
       font-size: 13px;
       font-weight: 700;
-      margin-bottom: 20px;
+      color: #4b5563;
     }
+    .nav-link:hover { background: var(--primary-light); color: var(--primary); }
+    .nav-link.primary { background: var(--primary); color: white; }
+    .nav-link.primary:hover { background: var(--primary-dark); }
 
-    .hero h1 {
-      font-size: clamp(40px, 6vw, 64px);
-      line-height: 1.08;
-      margin-bottom: 18px;
-      letter-spacing: -2px;
+    .hero {
+      background:
+        radial-gradient(circle at 85% 20%, rgba(103,53,143,.12), transparent 28%),
+        radial-gradient(circle at 78% 70%, rgba(239,125,45,.12), transparent 30%),
+        linear-gradient(135deg, #f7fbfe 0%, #eef7fc 100%);
+      border-bottom: 1px solid var(--border);
     }
-
-    .hero h1 span {
-      color: var(--primary);
+    .hero-inner {
+      max-width: 1150px;
+      margin: auto;
+      padding: 86px 24px 72px;
+      display: grid;
+      grid-template-columns: 1.25fr .75fr;
+      gap: 45px;
+      align-items: center;
     }
-
-    .hero h2 {
-      font-size: 21px;
-      font-weight: 600;
-      color: #46515c;
-      margin-bottom: 18px;
-    }
-
-    .hero p {
-      color: var(--muted);
-      max-width: 650px;
-      font-size: 16px;
-      margin-bottom: 28px;
-    }
-
-    .hero-buttons {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-
-    .btn {
+    .eyebrow {
       display: inline-block;
-      padding: 13px 21px;
-      border-radius: 9px;
-      font-weight: 700;
-      font-size: 14px;
-      transition: 0.25s ease;
-    }
-
-    .btn-primary {
-      background: var(--primary);
-      color: white;
-    }
-
-    .btn-primary:hover {
-      background: var(--primary-dark);
-      transform: translateY(-2px);
-    }
-
-    .btn-outline {
-      border: 1px solid var(--primary);
       color: var(--primary);
-      background: white;
-    }
-
-    .btn-outline:hover {
       background: var(--primary-light);
+      border: 1px solid #cfe5f3;
+      border-radius: 30px;
+      padding: 7px 13px;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
     }
+    .hero h1 {
+      font-size: clamp(38px, 5vw, 62px);
+      line-height: 1.08;
+      letter-spacing: -1.8px;
+      margin-bottom: 18px;
+    }
+    .hero h1 span { color: var(--primary); }
+    .hero .lead { color: var(--muted); font-size: 17px; max-width: 720px; margin-bottom: 24px; }
+    .tag-row { display: flex; flex-wrap: wrap; gap: 9px; margin-bottom: 28px; }
+    .tag {
+      padding: 7px 11px;
+      border: 1px solid var(--border);
+      background: white;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+      color: #40505d;
+    }
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 18px;
+      border-radius: 9px;
+      font-size: 13px;
+      font-weight: 800;
+      transition: .2s ease;
+    }
+    .btn-primary { background: var(--primary); color: white; }
+    .btn-primary:hover { background: var(--primary-dark); transform: translateY(-1px); }
+    .btn-outline { border: 1px solid var(--primary); color: var(--primary); background: white; }
+    .btn-outline:hover { background: var(--primary-light); }
 
-    .profile-card {
+    .hero-card {
       background: white;
       border: 1px solid var(--border);
       border-radius: 24px;
-      padding: 30px;
+      padding: 28px;
       box-shadow: var(--shadow);
-      text-align: center;
     }
-
-    .profile-photo {
-      width: 190px;
-      height: 190px;
-      object-fit: cover;
-      border-radius: 50%;
-      margin: 0 auto 20px;
-      border: 7px solid var(--primary-light);
-    }
-
-    .profile-card h3 {
-      margin-bottom: 5px;
-      font-size: 21px;
-    }
-
-    .profile-card p {
+    .hero-card .mini-label { font-size: 11px; color: var(--muted); font-weight: 800; text-transform: uppercase; letter-spacing: 1.2px; }
+    .hero-card h3 { font-size: 25px; margin: 5px 0 10px; }
+    .hero-card p { color: var(--muted); font-size: 14px; }
+    .status {
+      margin-top: 18px;
+      padding: 12px 14px;
+      border-radius: 12px;
+      background: #f8fbfd;
+      border: 1px solid var(--border);
       font-size: 13px;
-      color: var(--muted);
-      margin: 0;
+      color: #4a5a67;
     }
+    .status strong { color: var(--green); }
 
-    /* =========================================
-       GENERAL SECTIONS
-       ========================================= */
-
-    section {
-      padding: 80px 24px;
-    }
-
-    .section-container {
-      max-width: 1150px;
-      margin: auto;
-    }
-
-    .section-heading {
-      text-align: center;
-      margin-bottom: 45px;
-    }
-
+    main { max-width: 1150px; margin: auto; padding: 0 24px 70px; }
+    section.case-section { padding: 70px 0 0; }
+    .section-heading { text-align: center; max-width: 760px; margin: 0 auto 34px; }
     .section-heading span {
+      display: inline-block;
       color: var(--primary);
-      font-size: 13px;
+      font-size: 12px;
       font-weight: 800;
-      text-transform: uppercase;
       letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
     }
+    .section-heading h2 { font-size: clamp(28px, 4vw, 38px); line-height: 1.2; margin-bottom: 10px; }
+    .section-heading p { color: var(--muted); }
 
-    .section-heading h2 {
-      font-size: 34px;
-      margin: 8px 0;
-    }
-
-    .section-heading p {
-      color: var(--muted);
-      max-width: 650px;
-      margin: auto;
-    }
-
-    /* =========================================
-       ABOUT
-       ========================================= */
-
-    .about {
-      background: white;
-    }
-
-    .about-grid {
+    .metrics {
       display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 35px;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
     }
+    .metric {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 22px;
+      text-align: center;
+      box-shadow: 0 8px 25px rgba(23,105,170,.05);
+    }
+    .metric strong { display: block; font-size: 28px; color: var(--primary); line-height: 1.2; }
+    .metric span { display: block; color: var(--muted); font-size: 12px; margin-top: 6px; }
 
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
     .card {
       background: white;
       border: 1px solid var(--border);
       border-radius: var(--radius);
-      padding: 30px;
+      padding: 28px;
       box-shadow: var(--shadow);
     }
+    .card h3 { font-size: 21px; margin-bottom: 10px; }
+    .card p { color: var(--muted); margin-bottom: 14px; }
+    .check-list { list-style: none; }
+    .check-list li { position: relative; padding: 8px 0 8px 24px; color: #4c5a66; border-bottom: 1px solid #edf2f6; }
+    .check-list li:last-child { border-bottom: none; }
+    .check-list li::before { content: "✓"; position: absolute; left: 0; color: var(--primary); font-weight: 900; }
 
-    .about .card p {
-      color: var(--muted);
-      margin-bottom: 15px;
-    }
-
-    .highlight-list {
-      list-style: none;
-    }
-
-    .highlight-list li {
-      padding: 11px 0;
-      border-bottom: 1px solid var(--border);
-      font-weight: 600;
-    }
-
-    .highlight-list li:last-child {
-      border-bottom: none;
-    }
-
-    .highlight-list li::before {
-      content: "✓";
-      color: var(--primary);
-      font-weight: bold;
-      margin-right: 10px;
-    }
-
-    /* =========================================
-       SERVICES
-       ========================================= */
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-
-    .service-card {
-      background: white;
-      border: 1px solid var(--border);
-      padding: 27px;
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      transition: 0.25s ease;
-    }
-
-    .service-card:hover {
-      transform: translateY(-5px);
-      border-color: #b5d2e7;
-    }
-
-    .service-icon {
-      width: 45px;
-      height: 45px;
-      display: grid;
-      place-items: center;
-      background: var(--primary-light);
-      color: var(--primary);
-      border-radius: 10px;
-      font-size: 21px;
-      margin-bottom: 17px;
-    }
-
-    .service-card h3 {
-      font-size: 18px;
-      margin-bottom: 9px;
-    }
-
-    .service-card p {
-      color: var(--muted);
+    .notice {
+      margin-top: 24px;
+      background: #fffdf8;
+      border: 1px solid #f4dfba;
+      border-radius: 14px;
+      padding: 18px 20px;
+      color: #665333;
       font-size: 14px;
     }
+    .notice strong { color: #8a5b18; }
 
-    /* =========================================
-       FEATURED PROJECT
-       ========================================= */
-
-    .project-section {
-      background: #edf5fa;
-    }
-
-    .project-card {
+    .image-card {
       background: white;
       border: 1px solid var(--border);
-      border-radius: 22px;
+      border-radius: 18px;
       overflow: hidden;
       box-shadow: var(--shadow);
     }
+    .image-card img { background: #eef3f7; }
+    .image-caption { padding: 18px 20px; }
+    .image-caption strong { display: block; font-size: 15px; margin-bottom: 5px; }
+    .image-caption span { color: var(--muted); font-size: 13px; }
 
-    .project-top {
-      padding: 35px;
+    .screens-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 35px;
-      align-items: center;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
     }
+    .screens-grid .wide { grid-column: 1 / -1; }
 
-    .project-label {
-      color: var(--primary);
-      font-size: 12px;
-      font-weight: 800;
-      letter-spacing: 1.3px;
-      text-transform: uppercase;
-    }
-
-    .project-top h3 {
-      font-size: 35px;
-      margin: 8px 0;
-    }
-
-    .project-top h4 {
-      font-size: 17px;
-      color: #46515c;
-      margin-bottom: 15px;
-    }
-
-    .project-top p {
-      color: var(--muted);
-      margin-bottom: 20px;
-    }
-
-    .project-preview {
-      min-height: 300px;
-      border-radius: 15px;
-      background:
-        linear-gradient(135deg, #0b1016, #183b58);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      text-align: center;
-      padding: 30px;
-    }
-
-    .project-preview h2 {
-      font-size: 42px;
-      letter-spacing: 2px;
-    }
-
-    .project-preview p {
-      color: #cbd9e5;
-      margin-top: 5px;
-    }
-
-    .project-stats {
+    .creative-grid {
       display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      border-top: 1px solid var(--border);
+      grid-template-columns: repeat(2, 1fr);
+      gap: 26px;
+      align-items: start;
     }
-
-    .stat {
-      text-align: center;
-      padding: 22px 10px;
-      border-right: 1px solid var(--border);
-    }
-
-    .stat:last-child {
-      border-right: none;
-    }
-
-    .stat strong {
-      display: block;
-      color: var(--primary);
-      font-size: 22px;
-    }
-
-    .stat span {
-      color: var(--muted);
-      font-size: 12px;
-    }
-
-    /* Additional styling for Meta Ads featured project */
-    .meta-project-card {
-      margin-top: 30px;
-    }
-
-    .meta-project-preview {
-      background:
-        radial-gradient(circle at top right, rgba(255,255,255,0.18), transparent 32%),
-        linear-gradient(135deg, #0d4f82, #1769aa 58%, #6b4fd3);
-    }
-
-    .meta-preview-icon {
-      font-size: 42px;
-      margin-bottom: 10px;
-    }
-
-    .meta-project-preview h2 {
-      font-size: 38px;
-      letter-spacing: 1.5px;
-    }
-
-    .project-note {
-      margin-top: 13px !important;
-      margin-bottom: 0 !important;
-      color: #7a8792 !important;
-      font-size: 12px;
-      line-height: 1.6;
-    }
-
-    .meta-project-stats .stat strong {
-      font-size: 18px;
-    }
-
-    /* =========================================
-       SKILLS
-       ========================================= */
-
-    .skills {
+    .creative-card {
       background: white;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
     }
+    .creative-card img { aspect-ratio: 1/1; object-fit: cover; }
+    .creative-body { padding: 22px; }
+    .creative-number { color: var(--primary); font-size: 11px; font-weight: 800; letter-spacing: 1.4px; text-transform: uppercase; }
+    .creative-body h3 { margin: 5px 0 8px; }
+    .creative-body p { color: var(--muted); font-size: 14px; }
 
-    .skills-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 11px;
+    .results-wrap {
+      display: grid;
+      grid-template-columns: .85fr 1.15fr;
+      gap: 28px;
+      align-items: center;
     }
-
-    .skill {
-  padding: 10px 16px;
-  border: 1px solid var(--border);
-  background: #f8fbfd;
-  border-radius: 30px;
-  color: #3e4a54;
-  font-size: 13px;
-  font-weight: 600;
-  transition: 0.25s ease;
-}
-
-.skill:hover {
-  color: var(--primary);
-  border-color: var(--primary);
-  background: var(--primary-light);
-  transform: translateY(-2px);
-}
-
-    /* =========================================
-       EXPERIENCE
-       ========================================= */
-
-    .experience-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 22px;
-  background: white;
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 26px;
-  margin-bottom: 18px;
-  box-shadow: var(--shadow);
-  transition: 0.25s ease;
-}
-
-.experience-item:hover {
-  transform: translateY(-3px);
-  border-color: #b5d2e7;
-}
-
-.experience-logo {
-  width: 68px;
-  height: 68px;
-  min-width: 68px;
-  border-radius: 14px;
-  background: #ffffff;
-  color: var(--primary);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 15px;
-  font-weight: 800;
-  letter-spacing: 0.5px;
-  border: 1px solid var(--border);
-  overflow: hidden;
-}
-
-.experience-logo img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  padding: 7px;
-  display: block;
-}
-
-.experience-content {
-  flex: 1;
-}
-
-.experience-item h3 {
-  color: var(--primary);
-  font-size: 19px;
-  margin-bottom: 4px;
-}
-
-.experience-item .company {
-  font-weight: 700;
-  color: var(--text);
-  margin: 2px 0;
-}
-
-.experience-item .date {
-  color: var(--muted);
-  font-size: 13px;
-  margin-bottom: 10px;
-}
-
-.experience-item p {
-  color: var(--muted);
-  font-size: 14px;
-  margin: 0;
-}
-
-    /* =========================================
-       CTA
-       ========================================= */
+    .result-metrics { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 20px 0; }
+    .result-pill {
+      background: #f8fbfd;
+      border: 1px solid var(--border);
+      border-radius: 13px;
+      padding: 15px;
+    }
+    .result-pill strong { display: block; color: var(--primary); font-size: 23px; line-height: 1.2; }
+    .result-pill span { font-size: 11px; color: var(--muted); }
+    .historical-label {
+      display: inline-block;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: #eef8f3;
+      color: var(--green);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .9px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
 
     .cta {
-      background: var(--primary);
-      color: white;
+      margin-top: 70px;
+      border-radius: 24px;
+      padding: 42px 28px;
       text-align: center;
+      color: white;
+      background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+      box-shadow: var(--shadow);
     }
-
-    .cta h2 {
-      font-size: 36px;
-      margin-bottom: 10px;
-    }
-
-    .cta p {
-      max-width: 650px;
-      margin: 0 auto 25px;
-      color: #e3f1fa;
-    }
-
-    .cta .btn {
-      background: white;
-      color: var(--primary);
-    }
-
-    .cta .btn:hover {
-      background: #edf7fc;
-    }
-
-    /* =========================================
-       FOOTER
-       ========================================= */
+    .cta h2 { font-size: 31px; margin-bottom: 8px; }
+    .cta p { color: #e4f1f8; max-width: 680px; margin: 0 auto 22px; }
+    .cta-actions { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+    .cta .btn-primary { background: white; color: var(--primary); }
+    .cta .btn-primary:hover { background: #eef7fc; }
+    .cta .btn-outline { border-color: rgba(255,255,255,.65); color: white; background: transparent; }
+    .cta .btn-outline:hover { background: rgba(255,255,255,.1); }
 
     footer {
-      background: #17232d;
-      color: white;
-      padding: 35px 24px;
+      margin-top: 70px;
+      padding: 30px 24px;
       text-align: center;
-    }
-
-    footer p {
+      background: #17232d;
       color: #b8c5ce;
       font-size: 13px;
     }
 
-    .footer-links {
-      margin-bottom: 10px;
-    }
-
-    .footer-links a {
-      margin: 0 8px;
-      color: #d8e4ec;
-      font-size: 13px;
-    }
-
-    .footer-links a:hover {
-      color: white;
-    }
-
-    /* =========================================
-       RESPONSIVE
-       ========================================= */
-
     @media (max-width: 900px) {
-
-      nav {
-        gap: 12px;
-      }
-
-      .hero {
-        grid-template-columns: 1fr;
-        text-align: center;
-      }
-
-      .hero p {
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-      .hero-buttons {
-        justify-content: center;
-      }
-
-      .about-grid,
-      .project-top {
-        grid-template-columns: 1fr;
-      }
-
-      .services-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .project-stats {
-        grid-template-columns: repeat(3, 1fr);
-      }
-
-      .stat:nth-child(3) {
-        border-right: none;
-      }
+      .hero-inner, .results-wrap { grid-template-columns: 1fr; }
+      .metrics { grid-template-columns: repeat(2, 1fr); }
+      .hero-card { max-width: 600px; }
     }
-
-    @media (max-width: 650px) {
-
-      .navbar {
-        flex-direction: column;
-      }
-
-      nav {
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-
-      .hero {
-        padding-top: 55px;
-      }
-
-      .hero h1 {
-        font-size: 42px;
-      }
-
-      .services-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .project-stats {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .meta-project-stats .stat:last-child {
-        grid-column: 1 / -1;
-      }
-
-      .stat {
-        border-right: none;
-        border-bottom: 1px solid var(--border);
-      }
-
-      section {
-        padding: 60px 18px;
-      }
-      .experience-item {
-  gap: 15px;
-  padding: 20px;
-}
-
-.experience-logo {
-  width: 52px;
-  height: 52px;
-  min-width: 52px;
-  font-size: 12px;
-}
-
-.experience-logo img {
-  padding: 5px;
-}
-
-.experience-item h3 {
-  font-size: 17px;
-}
+    @media (max-width: 720px) {
+      .navbar { align-items: flex-start; flex-direction: column; }
+      .two-col, .screens-grid, .creative-grid { grid-template-columns: 1fr; }
+      .screens-grid .wide { grid-column: auto; }
+      .result-metrics { grid-template-columns: 1fr 1fr; }
+      .hero-inner { padding-top: 58px; }
     }
-  /* =========================================
-   VOLTCASE PROJECT GALLERY
-   ========================================= */
-
-.voltcase-gallery {
-  grid-column: 1 / -1;
-  width: 100%;
-  max-width: 100%;
-  box-sizing: border-box;
-  margin-top: 50px;
-  padding: 40px 0;
-  border-top: 1px solid var(--border);
-}
-
-.voltcase-gallery * {
-  box-sizing: border-box;
-}
-
-.gallery-intro {
-  text-align: center;
-  max-width: 700px;
-  margin: 0 auto 35px;
-}
-
-.gallery-intro > span {
-  display: inline-block;
-  margin-bottom: 10px;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--primary);
-}
-
-.gallery-intro h3 {
-  margin: 0 0 12px;
-  font-size: 28px;
-}
-
-.gallery-intro p {
-  margin: 0;
-  color: var(--muted);
-  line-height: 1.7;
-}
-
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
-}
-
-.gallery-card {
-  overflow: hidden;
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  background: var(--card);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.gallery-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.10);
-}
-
-.gallery-card img {
-  display: block;
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-}
-
-.gallery-large,
-.gallery-wide {
-  grid-column: 1 / -1;
-}
-
-.gallery-caption {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  padding: 20px 20px;
-}
-
-.gallery-caption strong {
-  font-size: 15px;
-}
-
-.gallery-caption span {
-  font-size: 13px;
-  color: var(--muted);
-}
-
-
-/* =========================================
-   MOBILE RESPONSIVE
-   ========================================= */
-
-@media (max-width: 650px) {
-
-  .project-details {
-    margin-top: 25px;
-    padding: 24px 16px;
-  }
-
-  /* Force Project Details into ONE column */
-  .project-details .details-grid {
-    display: grid;
-    grid-template-columns: 1fr !important;
-    gap: 18px;
-  }
-
-  .details-heading {
-    margin-bottom: 25px;
-  }
-
-  .details-heading h3 {
-    font-size: 23px;
-    line-height: 1.3;
-  }
-
-  .details-heading p {
-    font-size: 14px;
-    line-height: 1.6;
-  }
-
-  .details-column {
-    width: 100%;
-    padding: 20px;
-  }
-
-  .details-column h4 {
-    font-size: 18px;
-    margin-bottom: 15px;
-  }
-
-  .details-column li {
-    font-size: 14px;
-    line-height: 1.6;
-  }
-
-  /* VoltCase Gallery */
-  .gallery-grid {
-    grid-template-columns: 1fr;
-    gap: 18px;
-  }
-
-  .gallery-large,
-  .gallery-wide {
-    grid-column: auto;
-  }
-
-  .gallery-intro h3 {
-    font-size: 23px;
-  }
-
-}
-
-/* =========================================
-   VOLTCASE PROJECT GALLERY
-   ========================================= */
-
-.voltcase-gallery {
-  width: 100%;
-  max-width: 100%;
-  margin-top: 50px;
-  padding: 40px 0;
-  border-top: 1px solid var(--border);
-  box-sizing: border-box;
-}
-
-.voltcase-gallery * {
-  box-sizing: border-box;
-}
-
-.gallery-intro {
-  text-align: center;
-  max-width: 700px;
-  margin: 0 auto 35px;
-}
-
-.gallery-intro > span {
-  display: inline-block;
-  margin-bottom: 10px;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--primary);
-}
-
-.gallery-intro h3 {
-  margin: 0 0 12px;
-  font-size: 28px;
-}
-
-.gallery-intro p {
-  margin: 0;
-  color: var(--muted);
-  line-height: 1.7;
-}
-
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
-}
-
-.gallery-card {
-  overflow: hidden;
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  background: white;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.gallery-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.10);
-}
-
-.gallery-card img {
-  display: block;
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-}
-
-.gallery-large,
-.gallery-wide {
-  grid-column: 1 / -1;
-}
-
-.gallery-caption {
-  display: flex;
-  flex-direction: column;
-  gap: 7px;
-  padding: 20px 20px;
-}
-
-.gallery-caption strong {
-  font-size: 15px;
-}
-
-.gallery-caption span {
-  font-size: 13px;
-  color: var(--muted);
-}
-
-
-/* =========================================
-   PROJECT DETAILS
-   ========================================= */
-
-.project-details {
-  margin-top: 35px;
-  padding: 40px;
-  background: #ffffff;
-  border: 1px solid var(--border);
-  border-radius: 22px;
-  box-shadow: var(--shadow);
-}
-
-.details-heading {
-  text-align: center;
-  max-width: 750px;
-  margin: 0 auto 35px;
-}
-
-.details-heading span {
-  display: inline-block;
-  margin-bottom: 10px;
-  font-size: 12px;
-  font-weight: 800;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  color: var(--primary);
-}
-
-.details-heading h3 {
-  font-size: 28px;
-  margin: 0 0 12px;
-  color: var(--text);
-}
-
-.details-heading p {
-  margin: 0;
-  color: var(--muted);
-  line-height: 1.7;
-}
-
-.details-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 30px;
-}
-
-.details-column {
-  background: #f8fbfd;
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: 25px;
-}
-
-.details-column h4 {
-  font-size: 18px;
-  margin-bottom: 15px;
-  color: var(--text);
-}
-
-.details-column ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.details-column li {
-  position: relative;
-  padding: 9px 0 9px 22px;
-  color: var(--muted);
-  font-size: 14px;
-  border-bottom: 1px solid var(--border);
-}
-
-.details-column li:last-child {
-  border-bottom: none;
-}
-
-.details-column li::before {
-  content: "✓";
-  position: absolute;
-  left: 0;
-  top: 9px;
-  color: var(--primary);
-  font-weight: 800;
-}
-
-</style>
+    @media (max-width: 520px) {
+      .metrics, .result-metrics { grid-template-columns: 1fr; }
+      .hero-actions, .cta-actions { flex-direction: column; }
+      .btn { width: 100%; }
+    }
+  </style>
 </head>
-
 <body>
-
-  <!-- =========================================
-       HEADER
-       ========================================= -->
-
   <header>
     <div class="navbar">
-
-      <a href="#home" class="logo">
-        JEFFREY <span>TONIO</span>
-      </a>
-
-      <nav>
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#projects">Projects</a>
-        <a href="#skills">Skills</a>
-        <a href="#experience">Experience</a>
-        <a href="#contact" class="nav-button">Contact</a>
-      </nav>
-
+      <a href="index.html#home" class="logo">JEFFREY <span>TONIO</span></a>
+      <div class="nav-links">
+        <a href="index.html#projects" class="nav-link">← Back to Portfolio</a>
+        <a href="#results" class="nav-link">Results</a>
+        <a href="mailto:toniojeffrey28@gmail.com" class="nav-link primary">Contact Me</a>
+      </div>
     </div>
   </header>
 
+  <section class="hero">
+    <div class="hero-inner">
+      <div>
+        <span class="eyebrow">Meta / Facebook Ads Case Study</span>
+        <h1>Rune's Foodable <span>Facebook Ads</span> Campaign</h1>
+        <p class="lead">
+          A portfolio case study demonstrating my current Meta Ads workflow for a local food business — from Messenger campaign setup and audience testing to creative strategy and performance review.
+        </p>
+        <div class="tag-row">
+          <span class="tag">Messenger Ads</span>
+          <span class="tag">Local Targeting</span>
+          <span class="tag">Broad vs. Interest</span>
+          <span class="tag">Creative Testing</span>
+          <span class="tag">Meta Ads Manager</span>
+        </div>
+        <div class="hero-actions">
+          <a href="#strategy" class="btn btn-primary">View Campaign Strategy ↓</a>
+          <a href="https://drive.google.com/file/d/1AEUJ72a3jiL3ake8fdyVLuRa_Dkz4zRP/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn btn-outline">View 6-Page PDF ↗</a>
+        </div>
+      </div>
 
-  <!-- =========================================
-       HERO
-       ========================================= -->
+      <div class="hero-card">
+        <span class="mini-label">Project Snapshot</span>
+        <h3>Local Messenger Campaign</h3>
+        <p>Designed to demonstrate an organized, practical campaign setup for generating local inquiries and orders through Messenger.</p>
+        <div class="status"><strong>Portfolio demonstration:</strong> The current setup shown below is a draft/mock campaign and was not published. Historical results are clearly separated.</div>
+      </div>
+    </div>
+  </section>
 
   <main>
-
-    <section class="hero" id="home">
-
-      <div>
-
-        <span class="hero-badge">
-          AVAILABLE FOR REMOTE OPPORTUNITIES
-        </span>
-
-        <h1>
-          Hi, I'm <span>Jeffrey Tonio.</span>
-        </h1>
-
-        <h2>
-          General Virtual Assistant | Shopify Product Listing Specialist | Facebook Ads VA
-        </h2>
-
-        <p>
-          Your Trusted Virtual Partner for Administration,
-          Shopify Store Management, and Facebook Ads Success.
-        </p>
-
-        <div class="hero-buttons">
-
-          <a href="#projects" class="btn btn-primary">
-            View My Work
-          </a>
-
-          <a href="#contact" class="btn btn-outline">
-            Let's Work Together
-          </a>
-
-        </div>
-
+    <section class="case-section">
+      <div class="metrics">
+        <div class="metric"><strong>2</strong><span>Ad Sets</span></div>
+        <div class="metric"><strong>4</strong><span>Total Ads</span></div>
+        <div class="metric"><strong>2</strong><span>Creative Angles</span></div>
+        <div class="metric"><strong>₱320/day</strong><span>Planned Test Budget</span></div>
       </div>
-
-
-      <div class="profile-card">
-
-        <!-- TEMPORARY PHOTO PLACEHOLDER -->
-        <img
-          src="profile.png"
-          alt="Jeffrey Tugay Tonio"
-          class="profile-photo"
-        >
-
-        <h3>Jeffrey Tugay Tonio</h3>
-
-        <p>
-          General Virtual Assistant<br>
-          Shopify Product Listing Specialist
-        </p>
-
-      </div>
-
     </section>
 
-
-    <!-- =========================================
-         ABOUT
-         ========================================= -->
-
-    <section class="about" id="about">
-
-      <div class="section-container">
-
-        <div class="section-heading">
-
-          <span>About Me</span>
-
-          <h2>Professional Support You Can Rely On</h2>
-
-          <p>
-            Administrative, e-commerce, Shopify, and digital marketing support
-            designed to help businesses stay organized and productive.
-          </p>
-
-        </div>
-
-
-        <div class="about-grid">
-
-          <div class="card">
-
-            <p>
-              I am a results-driven professional with experience in
-              administrative support, sales, customer service, e-commerce,
-              digital marketing, and virtual assistance.
-            </p>
-
-            <p>
-              My goal is to provide reliable and efficient virtual support
-              while helping businesses improve their day-to-day operations
-              and online presence.
-            </p>
-
-            <p>
-              I combine organizational skills, attention to detail,
-              communication, and digital tools to complete tasks accurately
-              and efficiently.
-            </p>
-
-          </div>
-
-
-          <div class="card">
-
-            <ul class="highlight-list">
-
-              <li>Administrative Support</li>
-              <li>Shopify Store Management</li>
-              <li>Product Listing & Data Entry</li>
-              <li>E-commerce Support</li>
-              <li>Facebook Ads Support</li>
-              <li>Content & Social Media Support</li>
-
-            </ul>
-
-          </div>
-
-        </div>
-
+    <section class="case-section" id="strategy">
+      <div class="section-heading">
+        <span>Campaign Strategy</span>
+        <h2>Simple, controlled testing for a local business</h2>
+        <p>The mock campaign was structured to compare audience approach and creative angle while keeping the campaign goal focused on Messenger conversations.</p>
       </div>
 
+      <div class="two-col">
+        <div class="card">
+          <h3>Campaign Goal</h3>
+          <p>Generate qualified local inquiries and potential orders through Messenger.</p>
+          <ul class="check-list">
+            <li>Objective: Engagement / Messaging</li>
+            <li>Destination: Facebook Messenger</li>
+            <li>Performance goal: Maximize conversations</li>
+            <li>Bid strategy: Highest volume</li>
+            <li>Advantage+ placements</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Testing Structure</h3>
+          <p>Both ad sets use the same creatives and budget so the audience approach can be compared more fairly.</p>
+          <ul class="check-list">
+            <li>Ad Set 1: Broad local audience</li>
+            <li>Ad Set 2: Food-interest audience</li>
+            <li>Creative 1: Product / craving angle</li>
+            <li>Creative 2: Celebration / bilao angle</li>
+            <li>₱160 daily budget per ad set</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="notice">
+        <strong>Transparency note:</strong> This campaign setup is a current Meta Ads workflow demonstration created for my portfolio. It was saved as a draft and not published, so no mock results are presented as real performance.
+      </div>
     </section>
 
-
-    <!-- =========================================
-         SERVICES
-         ========================================= -->
-
-    <section id="services">
-
-      <div class="section-container">
-
-        <div class="section-heading">
-
-          <span>What I Can Do</span>
-
-          <h2>My Services</h2>
-
-          <p>
-            Practical virtual support for businesses, e-commerce stores,
-            and digital marketing projects.
-          </p>
-
-        </div>
-
-
-        <div class="services-grid">
-
-
-          <div class="service-card">
-
-            <div class="service-icon">✓</div>
-
-            <h3>General Virtual Assistance</h3>
-
-            <p>
-              Administrative support, data entry, research,
-              organization, and day-to-day business assistance.
-            </p>
-
-          </div>
-
-
-          <div class="service-card">
-
-            <div class="service-icon">🛒</div>
-
-            <h3>Shopify Store Management</h3>
-
-            <p>
-              Product uploads, product information, collections,
-              pricing, inventory, images, variants, and store updates.
-            </p>
-
-          </div>
-
-
-          <div class="service-card">
-
-            <div class="service-icon">📦</div>
-
-            <h3>Product Listing</h3>
-
-            <p>
-              Product titles, descriptions, tags, SKUs, images,
-              SEO fields, CSV imports, and product organization.
-            </p>
-
-          </div>
-
-
-          <div class="service-card">
-
-            <div class="service-icon">📈</div>
-
-            <h3>Facebook Ads Support</h3>
-
-            <p>
-              Assistance with Facebook advertising, campaign support,
-              content coordination, and basic performance monitoring.
-            </p>
-
-          </div>
-
-
-          <div class="service-card">
-
-            <div class="service-icon">✍</div>
-
-            <h3>Content Support</h3>
-
-            <p>
-              Social media content, product copy, blog content,
-              and digital marketing materials.
-            </p>
-
-          </div>
-
-
-          <div class="service-card">
-
-            <div class="service-icon">📊</div>
-
-            <h3>Data & Reporting</h3>
-
-            <p>
-              Data organization, reporting assistance, research,
-              spreadsheets, and administrative documentation.
-            </p>
-
-          </div>
-
-        </div>
-
+    <section class="case-section">
+      <div class="section-heading">
+        <span>Ads Manager Setup</span>
+        <h2>Campaign and audience configuration</h2>
+        <p>Actual Meta Ads Manager screenshots from the draft setup.</p>
       </div>
 
+      <div class="screens-grid">
+        <div class="image-card wide">
+          <img src="meta-campaign-structure.png" alt="Meta Ads campaign structure showing two ad sets and four ads">
+          <div class="image-caption">
+            <strong>01 — Campaign Structure</strong>
+            <span>Two audience approaches with two ads each for a total of four ads.</span>
+          </div>
+        </div>
+        <div class="image-card">
+          <img src="meta-broad-audience.png" alt="Broad local audience settings in Meta Ads Manager">
+          <div class="image-caption">
+            <strong>02 — Broad Local Audience</strong>
+            <span>Age 25–55, all genders, with no interest signals added.</span>
+          </div>
+        </div>
+        <div class="image-card">
+          <img src="meta-interest-audience.png" alt="Interest audience settings in Meta Ads Manager">
+          <div class="image-caption">
+            <strong>03 — Food Interest Audience</strong>
+            <span>Audience signals include Philippine cuisine and Desserts.</span>
+          </div>
+        </div>
+      </div>
     </section>
 
+    <section class="case-section">
+      <div class="section-heading">
+        <span>Creative Strategy</span>
+        <h2>Two ad angles for different buying moments</h2>
+        <p>The creatives were designed to test an everyday product/craving angle against an occasion-based bilao angle.</p>
+      </div>
 
-    <!-- =========================================
-         FEATURED PROJECT
-         ========================================= -->
-
-<section class="project-section" id="projects">
-
-  <div class="section-container">
-
-    <div class="section-heading">
-
-      <span>Featured Projects</span>
-
-      <h2>Selected Work &amp; Case Studies</h2>
-
-      <p>
-        Hands-on projects in Shopify e-commerce management and Meta/Facebook advertising.
-      </p>
-
-    </div>
-
-
-    <div class="project-card">
-
-      <div class="project-top">
-
-        <div>
-
-          <span class="project-label">
-            Shopify Store Development
-          </span>
-
-          <h3>⚡ VoltCase</h3>
-
-          <h4>
-            Powering Protection. Designed for Everyday.
-          </h4>
-
-          <p>
-            Built and optimized a Shopify e-commerce store for a
-            phone case brand, covering product management, CSV importing,
-            SEO, storefront customization, content creation,
-            and product quality assurance.
-          </p>
-
-<a href="#voltcase-case-study" class="btn btn-primary">
-  View Case Study
-</a>
-
-        </div>
-
-
-        <div class="project-preview">
-
-          <div>
-
-            <h2>VOLTCASE</h2>
-
-            <p>
-              Shopify E-commerce Store
-            </p>
-
+      <div class="creative-grid">
+        <article class="creative-card">
+          <img src="meta-ad-creative-1.png" alt="Freshly Made Kakanin Facebook ad creative">
+          <div class="creative-body">
+            <span class="creative-number">Ad Creative 01</span>
+            <h3>Freshly Made Kakanin</h3>
+            <p>Product-focused angle for merienda, sharing, and everyday cravings. CTA: Message to Order.</p>
           </div>
+        </article>
 
-        </div>
-
-      </div>
-
-
-      <div class="project-stats">
-
-        <div class="stat">
-          <strong>13</strong>
-          <span>Products</span>
-        </div>
-
-        <div class="stat">
-          <strong>9/9</strong>
-          <span>Variants QA</span>
-        </div>
-
-        <div class="stat">
-          <strong>9/9</strong>
-          <span>SKUs Passed</span>
-        </div>
-
-        <div class="stat">
-          <strong>9/9</strong>
-          <span>Inventory</span>
-        </div>
-
-        <div class="stat">
-          <strong>100%</strong>
-          <span>Product QA</span>
-        </div>
-
-      </div>
-
-    </div>  
-
-    <!-- META / FACEBOOK ADS CASE STUDY -->
-    <div class="project-card meta-project-card">
-
-      <div class="project-top">
-
-        <div>
-
-          <span class="project-label">
-            Meta / Facebook Ads
-          </span>
-
-          <h3>📈 Rune's Foodable</h3>
-
-          <h4>
-            Campaign Strategy, Audience Testing &amp; Creative Setup
-          </h4>
-
-          <p>
-            A Facebook Ads case study featuring a current Meta Ads campaign
-            setup demonstration, local audience targeting, Broad vs. Interest
-            testing, Messenger ads, creative testing, and historical real
-            campaign results.
-          </p>
-
-          <a
-            href="facebook-ads-case-study.html"
-            class="btn btn-primary"
-          >
-            View Facebook Ads Case Study
-          </a>
-
-          <p class="project-note">
-            Opens a dedicated case study page inside this portfolio. Mock campaign
-            setup and historical actual results are clearly identified.
-          </p>
-
-        </div>
-
-        <div class="project-preview meta-project-preview">
-
-          <div>
-            <div class="meta-preview-icon">📣</div>
-            <h2>META ADS</h2>
-            <p>Facebook Ads VA Case Study</p>
+        <article class="creative-card">
+          <img src="meta-ad-creative-2.png" alt="May Celebration kakanin bilao Facebook ad creative">
+          <div class="creative-body">
+            <span class="creative-number">Ad Creative 02</span>
+            <h3>May Celebration?</h3>
+            <p>Occasion-focused angle for birthdays, meetings, and family gatherings. CTA: Reserve Your Order.</p>
           </div>
-
-        </div>
-
+        </article>
       </div>
-
-      <div class="project-stats meta-project-stats">
-
-        <div class="stat">
-          <strong>2</strong>
-          <span>Ad Sets</span>
-        </div>
-
-        <div class="stat">
-          <strong>4</strong>
-          <span>Ads</span>
-        </div>
-
-        <div class="stat">
-          <strong>2</strong>
-          <span>Audience Tests</span>
-        </div>
-
-        <div class="stat">
-          <strong>6</strong>
-          <span>Case Study Pages</span>
-        </div>
-
-        <div class="stat">
-          <strong>Real + Mock</strong>
-          <span>Evidence</span>
-        </div>
-
-      </div>
-
-    </div>
-
-<div class="project-details" id="voltcase-case-study">
-
-  <div class="details-heading">
-
-    <span>PROJECT DETAILS</span>
-
-    <h3>Shopify Store Management &amp; Optimization</h3>
-
-    <p>
-      A hands-on e-commerce project focused on building, organizing,
-      optimizing, and quality-checking a Shopify storefront for VoltCase.
-    </p>
-
-  </div>
-
-
-  <div class="details-grid">
-
-    <div class="details-column">
-
-      <h4>My Role</h4>
-
-<ul>
-<li>Shopify Store Management</li>
-<li>Product Listing & Optimization</li>
-<li>CSV Product Import</li>
-<li>Product Image Management</li>
-<li>SEO & Product Content</li>
-<li>Storefront Customization</li>
-<li>Product Quality Assurance</li>
-</ul>
-
-    </div>
-
-
-    <div class="details-column">
-
-      <h4>Key Tasks Completed</h4>
-
-<ul>
-<li>Organized Shopify product catalog</li>
-<li>Imported and managed products through CSV</li>
-<li>Configured product variants and SKUs</li>
-<li>Added product images and product information</li>
-<li>Optimized product titles, descriptions, and tags</li>
-<li>Reviewed product pages for consistency and accuracy</li>
-<li>Performed product QA across the store</li>
-</ul>
-
-    </div>
-
-  </div>
-
-</div>
-
-
-<!-- =========================================
-     VOLTCASE PROJECT SHOWCASE
-     ========================================= -->
-
-<div class="voltcase-gallery">
-
-  <div class="gallery-intro">
-
-    <span>PROJECT SHOWCASE</span>
-
-    <h3>Inside the VoltCase Shopify Store</h3>
-
-    <p>
-      A closer look at the storefront, product catalog, and product detail
-      experience created and optimized for the VoltCase e-commerce project.
-    </p>
-
-  </div>
-
-
-  <div class="gallery-grid">
-
-    <div class="gallery-card gallery-large">
-
-      <img
-        src="voltcase-homepage.PNG"
-        alt="VoltCase Shopify homepage storefront"
-      >
-
-      <div class="gallery-caption">
-
-        <strong>01 — Storefront Design</strong>
-
-        <span>VoltCase Shopify Homepage</span>
-
-      </div>
-
-    </div>
-
-
-    <div class="gallery-card">
-
-      <img
-        src="voltcase-products.PNG"
-        alt="VoltCase Shopify product collection page"
-      >
-
-      <div class="gallery-caption">
-
-        <strong>02 — Product Catalog</strong>
-
-        <span>Organized Shopify Product Collection</span>
-
-      </div>
-
-    </div>
-
-
-    <div class="gallery-card">
-
-      <img
-        src="voltcase-product-detail-overview.PNG"
-        alt="VoltCase Shopify product detail page"
-      >
-
-      <div class="gallery-caption">
-
-        <strong>03 — Product Detail</strong>
-
-        <span>Product Information &amp; Purchase Experience</span>
-
-      </div>
-
-    </div>
-
-
-    <div class="gallery-card gallery-wide">
-
-      <img
-        src="voltcase-product-detail-specs.PNG"
-        alt="VoltCase Shopify product specifications and description"
-      >
-
-      <div class="gallery-caption">
-
-        <strong>04 — Product Optimization</strong>
-
-        <span>Product Description, Features &amp; Specifications</span>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</div>
-
-
-</section>
-
-
-    <!-- =========================================
-         SKILLS
-         ========================================= -->
-
-    <section class="skills" id="skills">
-
-      <div class="section-container">
-
-        <div class="section-heading">
-
-          <span>Skills & Tools</span>
-
-          <h2>Tools I Work With</h2>
-
-          <p>
-            Digital tools and skills used for administrative,
-            e-commerce, and marketing support.
-          </p>
-
-        </div>
-
-
-        <div class="skills-grid">
-
-          <span class="skill">Shopify</span>
-          <span class="skill">Facebook Ads Manager</span>
-          <span class="skill">Canva</span>
-          <span class="skill">Google Analytics</span>
-          <span class="skill">SEMrush</span>
-          <span class="skill">Hootsuite</span>
-          <span class="skill">Asana</span>
-          <span class="skill">Trello</span>
-          <span class="skill">Product Listing</span>
-          <span class="skill">Data Entry</span>
-          <span class="skill">SEO</span>
-          <span class="skill">Content Creation</span>
-          <span class="skill">E-commerce Support</span>
-          <span class="skill">Facebook Advertising</span>
-
-        </div>
-
-      </div>
-
     </section>
 
+    <section class="case-section" id="results">
+      <div class="section-heading">
+        <span>Historical Real Campaign</span>
+        <h2>Previous actual Facebook Ads results</h2>
+        <p>These results are from a previous Rune's Foodable campaign and are separate from the mock campaign setup shown above.</p>
+      </div>
 
-    <!-- =========================================
-         EXPERIENCE
-         ========================================= -->
-
-    <section id="experience">
-
-      <div class="section-container">
-
-        <div class="section-heading">
-
-          <span>Professional Background</span>
-
-          <h2>Work Experience</h2>
-
-          <p>
-            A background built through management, sales,
-            customer service, and business operations.
-          </p>
-
+      <div class="results-wrap">
+        <div class="card">
+          <span class="historical-label">Actual Historical Results</span>
+          <h3>Performance Snapshot</h3>
+          <p>This historical campaign provides evidence of prior hands-on Facebook Ads experience and performance monitoring.</p>
+          <div class="result-metrics">
+            <div class="result-pill"><strong>218</strong><span>Purchases</span></div>
+            <div class="result-pill"><strong>₱120,667</strong><span>Purchase Value</span></div>
+            <div class="result-pill"><strong>₱156.14</strong><span>Cost per Purchase</span></div>
+            <div class="result-pill"><strong>3.55x</strong><span>ROAS</span></div>
+          </div>
+          <p><strong>Important:</strong> These numbers are historical actual results and are not presented as results of the current mock portfolio campaign.</p>
         </div>
 
-
-       <div class="experience-list">
-
-  <div class="experience-item">
-
-    <div class="experience-logo">
-  <img src="yourva logo.png" alt="Your VA logo">
-</div>
-
-    <div class="experience-content">
-      <h3>General Virtual Assistant</h3>
-
-      <div class="company">
-        John Jynell Motilla · Freelance
+        <div class="image-card">
+          <img src="meta-historical-results.png" alt="Historical Facebook Ads results screenshot for Rune's Foodable">
+          <div class="image-caption">
+            <strong>Historical Results Screenshot</strong>
+            <span>Original Ads Manager performance evidence from a previous campaign.</span>
+          </div>
+        </div>
       </div>
-
-      <div class="date">
-        January 2026 – July 2026
-      </div>
-
-      <p>
-        Provided administrative and virtual assistance support, including
-        task management, file organization, communication, documentation,
-        research, and day-to-day business support. Helped maintain organized
-        workflows and complete tasks accurately and on schedule.
-      </p>
-    </div>
-
-  </div>
-
-
-  <div class="experience-item">
-
-    <div class="experience-logo">
-  <img src="mtc logo.jfif" alt="Milaor Trading Corp. logo">
-</div>
-
-    <div class="experience-content">
-      <h3>Salesman</h3>
-
-      <div class="company">
-        Milaor Trading Corp. · Full-Time
-      </div>
-
-      <div class="date">
-        November 2025 – July 2026
-      </div>
-
-      <p>
-        Managed customer accounts, promoted products, handled order processing,
-        monitored inventory, supported deliveries, and maintained strong
-        customer relationships. Contributed to sales activities, account
-        development, and daily distribution operations.
-      </p>
-    </div>
-
-  </div>
-
-
-  <div class="experience-item">
-
-    <div class="experience-logo">
-  <img src="flying v logo.png" alt="Flying V logo">
-</div>
-
-    <div class="experience-content">
-      <h3>Station Manager</h3>
-
-      <div class="company">
-        Flying V · Full-Time
-      </div>
-
-      <div class="date">
-        March 2025 – September 2025
-      </div>
-
-      <p>
-        Oversaw daily fuel station operations, staff coordination, customer
-        service, inventory monitoring, cash transactions, operational reports,
-        and compliance with company policies and safety standards.
-      </p>
-    </div>
-
-  </div>
-
-
-  <div class="experience-item">
-
-    <div class="experience-logo">
-  <img src="shantahl logo.jfif" alt="Shantahl logo">
-</div>
-
-    <div class="experience-content">
-      <h3>Store Manager</h3>
-
-      <div class="company">
-        Shantahl · Part-Time
-      </div>
-
-      <div class="date">
-        July 2019 – March 2025
-      </div>
-
-      <p>
-        Managed e-commerce store operations, customer experience, staff
-        coordination, product organization, inventory activities, promotional
-        campaigns, and day-to-day business processes while supporting sales
-        growth and operational efficiency.
-      </p>
-    </div>
-
-  </div>
-
-
-  <div class="experience-item">
-
-    <div class="experience-logo">
-  <img src="shawarma logo.jfif" alt="Chef JV Shawarma logo">
-</div>
-
-    <div class="experience-content">
-      <h3>Social Media Marketing Specialist</h3>
-
-      <div class="company">
-        Chef JV Shawarma · Freelance
-      </div>
-
-      <div class="date">
-        June 2023 – January 2025
-      </div>
-
-      <p>
-        Managed social media content and customer engagement by creating
-        promotional content, planning campaigns, writing captions, monitoring
-        audience interactions, and supporting brand awareness and customer
-        growth through digital marketing activities.
-      </p>
-    </div>
-
-  </div>
-
-
-  <div class="experience-item">
-
-    <div class="experience-logo">
-  <img src="rbpi logo.png" alt="Rural Bank of Pilar logo">
-</div>
-
-    <div class="experience-content">
-      <h3>BLU Manager</h3>
-
-      <div class="company">
-        Rural Bank of Pilar (Sor.) · Full-Time
-      </div>
-
-      <div class="date">
-        January 2023 – October 2023
-      </div>
-
-      <p>
-        Managed branch lending operations, client relationships, field
-        activities, account monitoring, team coordination, reports, and
-        customer service while supporting business development and branch
-        objectives.
-      </p>
-    </div>
-
-  </div>
-
-
-  <div class="experience-item">
-
-    <div class="experience-logo">RP</div>
-
-    <div class="experience-content">
-      <h3>Shopify Product Listing Specialist</h3>
-
-      <div class="company">
-        Rudolf Ryan Perez · Freelance
-      </div>
-
-      <div class="date">
-        September 2022 – March 2023
-      </div>
-
-      <p>
-        Managed Shopify product listings including product titles,
-        descriptions, collections, pricing, inventory information, product
-        images, variants, tags, and basic SEO optimization while maintaining
-        accurate and organized e-commerce product data.
-      </p>
-    </div>
-
-  </div>
-
-
-  <div class="experience-item">
-
-    <div class="experience-logo">
-  <img src="royale logo.jfif" alt="Royale Business Club logo">
-</div>
-
-    <div class="experience-content">
-      <h3>Distributor</h3>
-
-      <div class="company">
-        Royale Business Club · Full-Time
-      </div>
-
-      <div class="date">
-        December 2019 – August 2022
-      </div>
-
-      <p>
-        Promoted and distributed products, developed customer relationships,
-        handled product presentations and orders, provided after-sales
-        support, and helped new distributors improve their product knowledge
-        and sales skills.
-      </p>
-    </div>
-
-  </div>
-
-
-  <div class="experience-item">
-
-    <div class="experience-logo">
-  <img src="asa logo.png" alt="ASA Philippines Foundation logo">
-</div>
-
-    <div class="experience-content">
-      <h3>Branch Manager</h3>
-
-      <div class="company">
-        ASA Philippines Foundation, Inc. · Full-Time
-      </div>
-
-      <div class="date">
-        May 2013 – December 2019
-      </div>
-
-      <p>
-        Managed branch operations, customer relationships, loan applications,
-        field activities, portfolio monitoring, team coordination, compliance,
-        and business development. Progressed from Loan Officer to Branch
-        Manager while handling increasing operational and leadership
-        responsibilities.
-      </p>
-    </div>
-
-  </div>
-
-</div>
-
     </section>
 
-
-    <!-- =========================================
-         CONTACT
-         ========================================= -->
-
-    <section class="cta" id="contact">
-
-      <div class="section-container">
-
-        <h2>Let's Work Together</h2>
-
-        <p>
-          Looking for reliable virtual assistance, Shopify support,
-          product listing, or digital marketing assistance?
-          I'd be happy to discuss how I can support your business.
-        </p>
-
-        <a
-          href="mailto:toniojeffrey28@gmail.com"
-          class="btn"
-        >
-          Contact Me
-        </a>
-
+    <section class="case-section">
+      <div class="section-heading">
+        <span>Skills Demonstrated</span>
+        <h2>What this case study shows</h2>
       </div>
-
+      <div class="two-col">
+        <div class="card">
+          <h3>Meta Ads Setup</h3>
+          <ul class="check-list">
+            <li>Campaign, ad set, and ad naming structure</li>
+            <li>Messaging campaign configuration</li>
+            <li>Budget and schedule planning</li>
+            <li>Location, age, and audience setup</li>
+            <li>Placements and delivery settings</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Creative & Optimization Thinking</h3>
+          <ul class="check-list">
+            <li>Broad vs. interest audience testing</li>
+            <li>Creative angle testing</li>
+            <li>Messenger-focused ad copy and CTA</li>
+            <li>KPI awareness: conversations, CPA, ROAS</li>
+            <li>Clear separation of mock work and real results</li>
+          </ul>
+        </div>
+      </div>
     </section>
 
+    <div class="cta">
+      <h2>Need Facebook Ads support?</h2>
+      <p>I can support campaign setup, audience targeting, creative coordination, Messenger ad flows, and campaign monitoring for your business.</p>
+      <div class="cta-actions">
+        <a href="mailto:toniojeffrey28@gmail.com" class="btn btn-primary">Contact Me</a>
+        <a href="index.html#projects" class="btn btn-outline">Back to Portfolio</a>
+      </div>
+    </div>
   </main>
 
-
-  <!-- =========================================
-       FOOTER
-       ========================================= -->
-
-  <footer>
-
-<div class="footer-links">
-
-  <a href="#home">Home</a>
-  <a href="#about">About</a>
-  <a href="#services">Services</a>
-  <a href="#projects">Projects</a>
-  <a href="#skills">Skills</a>
-  <a href="#experience">Experience</a>
-  <a href="#contact">Contact</a>
-
-</div>
-
-    <p>
-      © 2026 Jeffrey Tugay Tonio. All Rights Reserved.
-    </p>
-
-  </footer>
-
-  <script>
-document.addEventListener("DOMContentLoaded", function () {
-
-  const navLinks = document.querySelectorAll("nav a[href^='#']");
-  const sections = document.querySelectorAll(
-    "#home, #about, #services, #projects, #skills, #experience, #contact"
-  );
-
-  function updateActiveNav() {
-
-    let currentSection = "";
-
-    sections.forEach(section => {
-
-      const sectionTop = section.offsetTop - 160;
-      const sectionBottom = sectionTop + section.offsetHeight;
-
-      if (
-        window.scrollY >= sectionTop &&
-        window.scrollY < sectionBottom
-      ) {
-        currentSection = section.getAttribute("id");
-      }
-
-    });
-
-    navLinks.forEach(link => {
-      link.classList.remove("active");
-
-      if (link.getAttribute("href") === "#" + currentSection) {
-        link.classList.add("active");
-      }
-    });
-  }
-
-  window.addEventListener("scroll", updateActiveNav);
-  window.addEventListener("load", updateActiveNav);
-
-});
-</script>
-
+  <footer>© 2026 Jeffrey Tugay Tonio. All Rights Reserved.</footer>
 </body>
 </html>
